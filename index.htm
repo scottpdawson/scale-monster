@@ -1,0 +1,152 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head id="www-scalemonster-com" data-template-set="html5-reset">
+
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ScaleMonster: easy visualizations of piano fingerings for scales</title>
+    
+    <meta name="title" content="ScaleMonster: easy visualizations of piano fingerings for scales">
+    <meta name="description" content="Easily visualize the proper finger positions for a variety of piano scales.">
+    <!-- Google will often use this as its description of your page/site. Make it good. -->
+        
+    <meta name="author" content="Scott Dawson">
+    <meta name="Copyright" content="Copyright Scott Dawson 2014. All Rights Reserved.">
+
+    <!-- Dublin Core Metadata : http://dublincore.org/ -->
+    <meta name="DC.title" content="ScaleMonster">
+    <meta name="DC.subject" content="Easily visualize the proper finger positions for a variety of piano scales.">
+    <meta name="DC.creator" content="Scott Dawson">
+    
+    <!--  Mobile Viewport Fix
+    j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+    device-width : Occupy full width of the screen in its current orientation
+    initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+    maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- <link rel="shortcut icon" href="media/images/website_graphics/favicon.ico"> -->
+    <!-- This is the traditional favicon.
+         - size: 16x16 or 32x32
+         - transparency is OK
+         - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+         
+    <!-- <link rel="apple-touch-icon" href="media/images/website_graphics/apple-touch-icon.png"> -->
+    <!-- The is the icon for iOS's Web Clip.
+         - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+         - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+         - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+    
+    <script>
+    function loadCSS(e,t,n){"use strict";var r=window.document.createElement("link");var i=t||window.document.getElementsByTagName("script")[0];r.rel="stylesheet";r.href=e;r.media="only x";i.parentNode.insertBefore(r,i);setTimeout(function(){r.media=n||"all"})}
+    loadCSS("media/styles/style.css");  
+    loadCSS("http://fonts.googleapis.com/css?family=Amatic+SC");  
+    </script>
+        
+</head>
+
+<body>
+
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+
+    <header>
+    
+    </header>
+    
+    <article>
+        
+        <div class="noteContainer l-grid"></div>
+
+        <div class="actionContainer">
+            <ul class="l-grid">
+                <li><img src="media/images/left_hand.png" title="Left hand fingering" class="handImage" /></li>
+                <li class="leftHand">
+                    <span class="handText">Left hand</span>
+                    <a href="javascript:void(0)" class="showScale"><img src="media/images/view.png" title="Show fingerings"></a>
+                    <a href="javascript:void(0)" class="playScale"><img src="media/images/play.png" title="Play scale"></a>
+                </li>
+                <li class="handsTogether">
+                    <select name="scaleSelect" class="scaleSelect">
+                        <option value="Cb">Cb Major</option>
+                        <option value="C">C Major</option>
+                        <option value="Cm">C Minor</option>
+                        <option value="Db">C# Major</option>
+                        <option value="Dbm">C# Minor</option>
+                        <option value="Db">Db Major</option>
+                        <option value="D">D Major</option>
+                        <option value="Dm">D Minor</option>
+                        <option value="DmH">D Minor (harmonic)</option>
+                        <option value="DmM">D Minor (melodic)</option>
+                        <option value="Eb">Eb Major</option>
+                        <option value="Ebm">Eb Minor</option>
+                        <option value="E">E Major</option>
+                        <option value="Em">E Minor</option>
+                        <option value="EmH">E Minor (harmonic)</option>
+                        <option value="EmM">E Minor (melodic)</option>
+                        <option value="F">F Major</option>
+                        <option value="Fm">F Minor</option>
+                        <option value="Gb">F# Major</option>
+                        <option value="Gbm">F# Minor</option>
+                        <option value="Gb">Gb Major</option>
+                        <option value="G">G Major</option>
+                        <option value="Gm">G Minor</option>
+                        <option value="Ab">Ab Major</option>
+                        <option value="Abm">Ab Minor</option>
+                        <option value="A">A Major</option>
+                        <option value="Am">A Minor</option>
+                        <option value="AmH">A Minor (harmonic)</option>
+                        <option value="Bb">Bb Major</option>
+                        <option value="Bbm">Bb Minor</option>
+                        <option value="B">B Major</option>
+                        <option value="Bm">B Minor</option>
+                    </select>
+                    <span class="handText">Hands together</span>
+                    <a href="javascript:void(0)" class="showScale"><img src="media/images/view.png" title="Show fingerings"></a>
+                    <a href="javascript:void(0)" class="playScale"><img src="media/images/play.png" title="Play scale"></a>
+                </li>
+                <li class="rightHand">
+                    <span class="handText">Right hand</span>
+                    <a href="javascript:void(0)" class="showScale"><img src="media/images/view.png" title="Show fingerings"></a>
+                    <a href="javascript:void(0)" class="playScale"><img src="media/images/play.png" title="Play scale"></a>
+                </li>
+                <li><img src="media/images/right_hand.png" title="Right hand fingering" class="handImage" /></li>
+            </ul>
+        </div>
+
+        <h2 class="whatisthis">What is <span style="color: #3AA851">Scale</span><span style="color: #B3180B">Monster</span>?</h2>
+        <p class="whatisthis">My daughter and son's piano teacher has given them scale assignments over the past few years and I saw fit to write
+            them down in a notebook all in once place. I thought it'd be cool to create an online interactive version
+            that shows the fingerings for each scale. If you have a scale not listed that you'd like me to add, send me a note on <a href="http://www.twitter.com/scottpdawson">twitter</a>.
+        </p>
+    
+    </article>
+    
+    <footer>
+
+        &copy; <a href="http://scottpdawson.com" target=_blank>Scott Dawson</a><br />
+        Sound library courtesy of <a href="http://joewlarson.com/blog/2011/10/16/introducing-thunder-js/" target=_blank>thunder.js</a>; Hand icons courtesy of <a href="http://icons8.com" target=_blank>icons8.com</a>
+                
+    </footer>
+
+</div>
+
+<!-- here comes the javascript -->
+<script src="media/scripts/jquery.js"></script>
+
+<!-- this is where we put our custom functions -->
+<script src="media/scripts/functions.js"></script>
+<script src="media/scripts/thunder.js"></script>
+
+</body>
+</html>
